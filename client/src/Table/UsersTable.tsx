@@ -10,7 +10,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { IconPencil, IconTrash } from '@tabler/icons-react';
-import { baseURL } from './constants';
+import { baseURL } from '../constants';
 import { useQuery } from 'react-query';
 const fakedata: UsersTableProps = {
   data: [
@@ -71,13 +71,22 @@ const jobColors: Record<string, string> = {
   engineer: 'blue',
   manager: 'cyan',
   designer: 'pink',
+  product: 'teal',
+  marketing: 'orange',
+  sales: 'red',
+  finance: 'yellow',
+  hr: 'green',
+  operations: 'violet',
+  legal: 'indigo',
 };
 
 const getMentors = async (jobTitle: string, company: string) => {
   const url = new URL(`${baseURL}/api/mentors`);
-  if (jobTitle) url.searchParams.append('jobTitle', jobTitle);
-  if (company) url.searchParams.append('company', company);
+  if (company) url.searchParams.append('jobTitle', jobTitle);
+  console.log(url.toString());
+  // if (company) url.searchParams.append('company', company);
   const response = await fetch(url.toString());
+  console.log(url.toString());
   return response.json();
 };
 
@@ -91,7 +100,7 @@ export function UsersTable({ jobTitle = '', company = '' }) {
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error</div>;
-  const rows = data.data.map((item: any) => (
+  const rows = data.map((item: any) => (
     <tr key={item.name}>
       <td>
         <Group spacing="sm">
@@ -104,10 +113,10 @@ export function UsersTable({ jobTitle = '', company = '' }) {
 
       <td>
         <Badge
-          color={jobColors[item.job.toLowerCase()]}
+          color={jobColors[item.jobTitle.toLowerCase()] ?? 'green'}
           variant={theme.colorScheme === 'dark' ? 'light' : 'outline'}
         >
-          {item.job}
+          {item.jobTitle}
         </Badge>
       </td>
       <td>
@@ -115,11 +124,11 @@ export function UsersTable({ jobTitle = '', company = '' }) {
           {item.email}
         </Anchor>
       </td>
-      <td>
+      {/* <td>
         <Text fz="sm" c="dimmed">
           {item.phone}
         </Text>
-      </td>
+      </td> */}
       <td>
         <Group spacing={0} position="right">
           <ActionIcon>
@@ -141,7 +150,7 @@ export function UsersTable({ jobTitle = '', company = '' }) {
             <th>Employee</th>
             <th>Job title</th>
             <th>Email</th>
-            <th>Phone</th>
+            {/* <th>Phone</th> */}
             <th />
           </tr>
         </thead>

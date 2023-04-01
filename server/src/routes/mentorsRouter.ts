@@ -1,6 +1,8 @@
 // Setup a
 // Setup a new router
 import { Router } from 'express';
+import { Mentor } from '../services/Mentor.js';
+import { faker } from '@faker-js/faker';
 const router = Router();
 
 const data = {
@@ -48,9 +50,24 @@ const data = {
   ],
 };
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   const { jobTitle, company } = req.query;
-  res.json(data);
+  if (!jobTitle) return res.json(await Mentor.getAllMentors());
+  const mentors = await Mentor.getMentorsByTitle(jobTitle);
+  res.json(mentors);
+});
+
+router.post('/', (req, res) => {
+  const { name, jobTitle, email, company } = req.body;
+  const mentor = new Mentor({
+    name,
+    jobTitle,
+    email,
+    company,
+    avatar: faker.image.avatar(),
+  });
+  mentor.save();
+  res.json({ message: 'Mentor created' });
 });
 
 export { router as mentors };

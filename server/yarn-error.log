@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/anathan/.nvm/versions/node/v14.21.2/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js add react-query
+  /Users/anathan/.nvm/versions/node/v14.21.2/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js add @aws-sdk/client-dynamodb
 
 PATH: 
   /Users/anathan/.nvm/versions/node/v14.21.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/anathan/.nvm/versions/node/v14.21.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/anathan/.fig/bin:/Users/anathan/.local/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin
@@ -14,17 +14,8 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://registry.npmjs.intuit.com/react-query: Request "https://registry.npmjs.intuit.com/react-query" returned a 403
-      at Request.params.callback [as _callback] (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:66154:18)
-      at Request.self.callback (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:140890:22)
-      at Request.emit (events.js:400:28)
-      at Request.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141862:10)
-      at Request.emit (events.js:400:28)
-      at IncomingMessage.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141784:12)
-      at Object.onceWrapper (events.js:519:28)
-      at IncomingMessage.emit (events.js:412:35)
-      at endReadableNT (internal/streams/readable.js:1333:12)
-      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+  Error: getaddrinfo ENOTFOUND registry.npmjs.intuit.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:71:26)
 
 npm manifest: 
   {
@@ -42,6 +33,7 @@ npm manifest:
     "author": "",
     "license": "ISC",
     "devDependencies": {
+      "@faker-js/faker": "^7.6.0",
       "@types/node": "^18.11.18",
       "nodemon": "^2.0.21",
       "typescript": "^4.9.4"
@@ -50,6 +42,7 @@ npm manifest:
       "cors": "^2.8.5",
       "dotenv": "^16.0.3",
       "express": "^4.18.2",
+      "react-query": "^3.39.3",
       "ts-node": "^10.9.1"
     }
   }
@@ -62,12 +55,24 @@ Lockfile:
   # yarn lockfile v1
   
   
+  "@babel/runtime@^7.12.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2":
+    version "7.21.0"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/@babel/runtime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"
+    integrity sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==
+    dependencies:
+      regenerator-runtime "^0.13.11"
+  
   "@cspotcode/source-map-support@^0.8.0":
     version "0.8.1"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
     integrity sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==
     dependencies:
       "@jridgewell/trace-mapping" "0.3.9"
+  
+  "@faker-js/faker@^7.6.0":
+    version "7.6.0"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/@faker-js/faker/-/faker-7.6.0.tgz#9ea331766084288634a9247fcd8b84f16ff4ba07"
+    integrity sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==
   
   "@jridgewell/resolve-uri@^3.0.3":
     version "3.1.0"
@@ -158,6 +163,11 @@ Lockfile:
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
     integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
   
+  big-integer@^1.6.16:
+    version "1.6.51"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/big-integer/-/big-integer-1.6.51.tgz#0df92a5d9880560d3ff2d5fd20245c889d130686"
+    integrity sha512-GPEid2Y9QU1Exl1rpO9B2IPJGHPSupF5GnVIP0blYvNOMer2bTvSWs1jGOUg04hTmu67nmLsQ9TBo1puaotBHg==
+  
   binary-extensions@^2.0.0:
     version "2.2.0"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
@@ -195,6 +205,20 @@ Lockfile:
     integrity sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==
     dependencies:
       fill-range "^7.0.1"
+  
+  broadcast-channel@^3.4.1:
+    version "3.7.0"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/broadcast-channel/-/broadcast-channel-3.7.0.tgz#2dfa5c7b4289547ac3f6705f9c00af8723889937"
+    integrity sha512-cIAKJXAxGJceNZGTZSBzMxzyOn72cVgPnKx4dc6LRjQgbaJUQqhy5rzL3zbMxkMWsGKkv2hSFkPRMEXfoMZ2Mg==
+    dependencies:
+      "@babel/runtime" "^7.7.2"
+      detect-node "^2.1.0"
+      js-sha3 "0.8.0"
+      microseconds "0.2.0"
+      nano-time "1.0.0"
+      oblivious-set "1.0.0"
+      rimraf "3.0.2"
+      unload "2.2.0"
   
   bytes@3.1.2:
     version "3.1.2"
@@ -287,6 +311,11 @@ Lockfile:
     version "1.2.0"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/destroy/-/destroy-1.2.0.tgz#4803735509ad8be552934c67df614f94e66fa015"
     integrity sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==
+  
+  detect-node@^2.0.4, detect-node@^2.1.0:
+    version "2.1.0"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/detect-node/-/detect-node-2.1.0.tgz#c9c70775a49c3d03bc2c06d9a73be550f978f8b1"
+    integrity sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==
   
   diff@^4.0.1:
     version "4.0.2"
@@ -385,6 +414,11 @@ Lockfile:
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
     integrity sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==
   
+  fs.realpath@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
+    integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
+  
   fsevents@~2.3.2:
     version "2.3.2"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
@@ -410,6 +444,18 @@ Lockfile:
     integrity sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==
     dependencies:
       is-glob "^4.0.1"
+  
+  glob@^7.1.3:
+    version "7.2.3"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/glob/-/glob-7.2.3.tgz#b8df0fb802bbfa8e89bd1d938b4e16578ed44f2b"
+    integrity sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==
+    dependencies:
+      fs.realpath "^1.0.0"
+      inflight "^1.0.4"
+      inherits "2"
+      minimatch "^3.1.1"
+      once "^1.3.0"
+      path-is-absolute "^1.0.0"
   
   has-flag@^3.0.0:
     version "3.0.0"
@@ -451,7 +497,15 @@ Lockfile:
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/ignore-by-default/-/ignore-by-default-1.0.1.tgz#48ca6d72f6c6a3af00a9ad4ae6876be3889e2b09"
     integrity sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA==
   
-  inherits@2.0.4:
+  inflight@^1.0.4:
+    version "1.0.6"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
+    integrity sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==
+    dependencies:
+      once "^1.3.0"
+      wrappy "1"
+  
+  inherits@2, inherits@2.0.4:
     version "2.0.4"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
     integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
@@ -485,10 +539,23 @@ Lockfile:
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
     integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
   
+  js-sha3@0.8.0:
+    version "0.8.0"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/js-sha3/-/js-sha3-0.8.0.tgz#b9b7a5da73afad7dedd0f8c463954cbde6818840"
+    integrity sha512-gF1cRrHhIzNfToc802P800N8PpXS+evLLXfsVpowqmAFR9uwbi89WvXg2QspOmXL8QL86J4T1EpFu+yUkwJY3Q==
+  
   make-error@^1.1.1:
     version "1.3.6"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/make-error/-/make-error-1.3.6.tgz#2eb2e37ea9b67c4891f684a1394799af484cf7a2"
     integrity sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==
+  
+  match-sorter@^6.0.2:
+    version "6.3.1"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/match-sorter/-/match-sorter-6.3.1.tgz#98cc37fda756093424ddf3cbc62bfe9c75b92bda"
+    integrity sha512-mxybbo3pPNuA+ZuCUhm5bwNkXrJTbsk5VWbR5wiwz/GC6LIiegBGn2w3O08UG/jdbYLinw51fSQ5xNU1U3MgBw==
+    dependencies:
+      "@babel/runtime" "^7.12.5"
+      remove-accents "0.4.2"
   
   media-typer@0.3.0:
     version "0.3.0"
@@ -504,6 +571,11 @@ Lockfile:
     version "1.1.2"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
     integrity sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==
+  
+  microseconds@0.2.0:
+    version "0.2.0"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/microseconds/-/microseconds-0.2.0.tgz#233b25f50c62a65d861f978a4a4f8ec18797dc39"
+    integrity sha512-n7DHHMjR1avBbSpsTBj6fmMGh2AGrifVV4e+WYc3Q9lO+xnSZ3NyhcBND3vzzatt05LFhoKFRxrIyklmLlUtyA==
   
   mime-db@1.52.0:
     version "1.52.0"
@@ -522,7 +594,7 @@ Lockfile:
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
     integrity sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==
   
-  minimatch@^3.1.2:
+  minimatch@^3.1.1, minimatch@^3.1.2:
     version "3.1.2"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
     integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
@@ -538,6 +610,13 @@ Lockfile:
     version "2.1.3"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
     integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
+  
+  nano-time@1.0.0:
+    version "1.0.0"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/nano-time/-/nano-time-1.0.0.tgz#b0554f69ad89e22d0907f7a12b0993a5d96137ef"
+    integrity sha512-flnngywOoQ0lLQOTRNexn2gGSNuM9bKj9RZAWSzhQ+UJYaAFG9bac4DW9VHjUAzrOaIcajHybCTHe/bkvozQqA==
+    dependencies:
+      big-integer "^1.6.16"
   
   negotiator@0.6.3:
     version "0.6.3"
@@ -582,6 +661,11 @@ Lockfile:
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/object-inspect/-/object-inspect-1.12.3.tgz#ba62dffd67ee256c8c086dfae69e016cd1f198b9"
     integrity sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==
   
+  oblivious-set@1.0.0:
+    version "1.0.0"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/oblivious-set/-/oblivious-set-1.0.0.tgz#c8316f2c2fb6ff7b11b6158db3234c49f733c566"
+    integrity sha512-z+pI07qxo4c2CulUHCDf9lcqDlMSo72N/4rLUpRXf6fu+q8vjt8y0xS+Tlf8NTJDdTXHbdeO1n3MlbctwEoXZw==
+  
   on-finished@2.4.1:
     version "2.4.1"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/on-finished/-/on-finished-2.4.1.tgz#58c8c44116e54845ad57f14ab10b03533184ac3f"
@@ -589,10 +673,22 @@ Lockfile:
     dependencies:
       ee-first "1.1.1"
   
+  once@^1.3.0:
+    version "1.4.0"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
+    integrity sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==
+    dependencies:
+      wrappy "1"
+  
   parseurl@~1.3.3:
     version "1.3.3"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
     integrity sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==
+  
+  path-is-absolute@^1.0.0:
+    version "1.0.1"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
+    integrity sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==
   
   path-to-regexp@0.1.7:
     version "0.1.7"
@@ -639,12 +735,38 @@ Lockfile:
       iconv-lite "0.4.24"
       unpipe "1.0.0"
   
+  react-query@^3.39.3:
+    version "3.39.3"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/react-query/-/react-query-3.39.3.tgz#4cea7127c6c26bdea2de5fb63e51044330b03f35"
+    integrity sha512-nLfLz7GiohKTJDuT4us4X3h/8unOh+00MLb2yJoGTPjxKs2bc1iDhkNx2bd5MKklXnOD3NrVZ+J2UXujA5In4g==
+    dependencies:
+      "@babel/runtime" "^7.5.5"
+      broadcast-channel "^3.4.1"
+      match-sorter "^6.0.2"
+  
   readdirp@~3.6.0:
     version "3.6.0"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/readdirp/-/readdirp-3.6.0.tgz#74a370bd857116e245b29cc97340cd431a02a6c7"
     integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
     dependencies:
       picomatch "^2.2.1"
+  
+  regenerator-runtime@^0.13.11:
+    version "0.13.11"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
+    integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
+  
+  remove-accents@0.4.2:
+    version "0.4.2"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/remove-accents/-/remove-accents-0.4.2.tgz#0a43d3aaae1e80db919e07ae254b285d9e1c7bb5"
+    integrity sha512-7pXIJqJOq5tFgG1A2Zxti3Ht8jJF337m4sowbuHsW30ZnkQFnDzy9qBNhgzX8ZLW4+UBcXiiR7SwR6pokHsxiA==
+  
+  rimraf@3.0.2:
+    version "3.0.2"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/rimraf/-/rimraf-3.0.2.tgz#f1a5402ba6220ad52cc1282bac1ae3aa49fd061a"
+    integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
+    dependencies:
+      glob "^7.1.3"
   
   safe-buffer@5.2.1:
     version "5.2.1"
@@ -784,6 +906,14 @@ Lockfile:
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/undefsafe/-/undefsafe-2.0.5.tgz#38733b9327bdcd226db889fb723a6efd162e6e2c"
     integrity sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==
   
+  unload@2.2.0:
+    version "2.2.0"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/unload/-/unload-2.2.0.tgz#ccc88fdcad345faa06a92039ec0f80b488880ef7"
+    integrity sha512-B60uB5TNBLtN6/LsgAf3udH9saB5p7gqJwcFfbOEZ8BcBHnGwCf6G/TGiEqkRAxX7zAFIUtzdrXQSdL3Q/wqNA==
+    dependencies:
+      "@babel/runtime" "^7.6.2"
+      detect-node "^2.0.4"
+  
   unpipe@1.0.0, unpipe@~1.0.0:
     version "1.0.0"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
@@ -803,6 +933,11 @@ Lockfile:
     version "1.1.2"
     resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
     integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
+  
+  wrappy@1:
+    version "1.0.2"
+    resolved "https://registry.npmjs.intuit.com:443/artifactory/api/npm/npm-intuit/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
+    integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
   
   yn@3.1.1:
     version "3.1.1"
